@@ -21,17 +21,17 @@
 
 @font-face {
     font-family: 'lora';
-    src: url(./fonts/Lora-VariableFont_wght.ttf);
+    src: url(../fonts/Lora-VariableFont_wght.ttf);
 }
 
 @font-face {
     font-family: 'lora-italic';
-    src: url(./fonts/Lora-Italic-VariableFont_wght.ttf);
+    src: url(../fonts/Lora-Italic-VariableFont_wght.ttf);
 }
 
 @font-face {
     font-family: 'tenor-sans';
-    src: url(./fonts/TenorSans-Regular.ttf);
+    src: url(../fonts/TenorSans-Regular.ttf);
 }
 
 
