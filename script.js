@@ -10,3 +10,4 @@ button.addEventListener("click", () => {
 closeSlider.addEventListener("click", () => {
   slider.style.display = "none";
 });
+
