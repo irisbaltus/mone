@@ -63,7 +63,7 @@ h2{
 } */
 
 p{
-    font-size: min(2.7vw, .7rem);
+    font-size: min(3vw, .75rem);
     
 }
 
@@ -82,6 +82,10 @@ a{
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.italic{
+    font-style: italic;
 }
 
 li{
@@ -200,7 +204,13 @@ nav ul{
 }
 
 nav img{
-    width: 20vw;
+    width: 32vw;
+}
+@media (width > 30em) {
+    nav img{
+        width: 20vw;
+    }
+    
 }
 
 nav li{
@@ -218,8 +228,8 @@ nav a:nth-of-type(2){
 }
 
 header div{
-    width: 1.3em;
-    height: 1em;
+    width: 1em;
+    height: .8em;
     align-items: end;
     display: flex;
     flex-direction: column;
@@ -232,7 +242,7 @@ header div{
 header div span{
     display: flex;
     width: 100%;
-    height: .125em;
+    height: .1em;
     background-color: #000;
 
 }
@@ -242,14 +252,21 @@ header ul{
 }
 header a{
     color: var(--font-color-inactive);
-    transition: ease-in-out 1s;
+    
+    
+
+}
+header li{
+    transition: transform .4s ease-in-out;
+    
 
 }
 
-header a:hover{
+header li:hover{
     
     transform: skewX(-10deg);
     opacity: 0.9;
+    /* font-weight: 500; */
     /* font-style: italic; */
 }
 
@@ -468,7 +485,7 @@ main{
 @media  (width > 55em){
     #about img{
         width: 120vw;
-        height: auto;
+        /* height: auto; */
 
     }
     
@@ -529,7 +546,7 @@ main{
 }
 /* a - on hover */
 #main-work article a{
-    transition: transform .2s ease, opacity .2s ease;
+    transition: transform .3s ease, opacity .3s ease;
 
 }
 
@@ -763,7 +780,36 @@ main{
     .grid-photos section > p{
         grid-column: 1 / 2;
         align-self: flex-end;
+        max-width: 30em;
     }
+    #twins section > p{
+        max-width: 40em;
+    }
+}
+
+@media (width > 63em){
+     .grid-photos ul{
+        display: grid;
+        flex-direction: column;
+        grid-auto-rows: 1rem;
+        grid-template-columns: 1fr 1fr;
+        align-content: end;
+
+     }
+
+     #denim ul li:nth-of-type(2){
+        order: 5;
+     }
+     #denim ul li:nth-of-type(4){
+        order: 4;
+     }
+     #denim ul li:nth-of-type(3){
+        order: 3;
+     }
+     #denim ul li:nth-of-type(5){
+        order: 5;
+     }
+            
 }
 /* #twins p{
     order: 2;
@@ -1000,7 +1046,7 @@ main{
 
     transition: link-italic 0.5s ease-in-out;
 
-    transition: transform .2s ease, opacity .2s ease;
+    transition: transform .4s ease, opacity .4s ease;
 }
 
 
@@ -1013,10 +1059,10 @@ main{
     transition: transform .4s ease;
 } */
 #photography h2 + .img-wrapper img{
-    transition: transform .5s ease-in-out;
+    transition: transform .4s ease-in-out;
 }
 #photography h2:hover + .img-wrapper img{
-    transform: scale(1.04); 
+    transform: scale(1.03); 
    
 }
 .img-wrapper{
@@ -1131,4 +1177,27 @@ main{
         justify-self: center;
         /* object-fit: contain; */
     }
+}
+
+.webdesign{
+    margin-left: var(--margin-width);
+    margin-right: var(--margin-width);
+
+    height: 100vh;
+}
+
+.webdesign h1{
+    font-family: var(--font-tenor-sans);
+}
+
+.webdesign img{
+    width: 50vw;
+}
+.webdesign section{
+    display: flex;
+    gap: .5rem;
+    max-width: 30rem;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 2 * var(--margin-width));
 }
