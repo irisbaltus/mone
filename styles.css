@@ -147,9 +147,11 @@ header{
 }
 
 .slide-menu{
-    display: none;
+    visibility: hidden;
+    /* display: none; */
     width: 50vw;
     height: 100vh;
+    z-index: 1000;
 
     background-color: var(--color-background);
     background-image: url('img/general/sand-bckgrnd.png');
@@ -161,14 +163,60 @@ header{
     align-content: flex-end;
     justify-content: space-between;
 
-    margin-right: var(--margin-width);
+    
+    transform: translateX(100%);
+    transition: transform .6s ease,
+                visibility 0s linear .6s;
 
-    position: absolute;
+    margin-right: var(--margin-width);
+    z-index: 20;
+
+    position: fixed;
     bottom: 0;
     top: 0;
     left: 50vw;
     padding: var(--margin-width);
 }
+
+/* .slide-menu.open{
+    
+} */
+
+.slide-menu.open{
+    display: flex;
+    transform: translateX(0);
+    transition: transform .6s ease;
+    visibility: visible;
+}
+
+/* background overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    opacity: 0;
+    z-index: 10;
+    visibility: hidden;
+
+    /* visibility: hidden; */
+    transition: opacity .4s ease;
+}
+
+.overlay.open{
+    opacity: 0.5;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition: opacity .4s ease;
+
+}
+
+.slide-menu.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 
 .slide-menu ul{
     display: flex;
@@ -180,6 +228,7 @@ header{
 }
 .slide-menu img{
     width: .7em;
+    margin-top: calc(.5 * var(--margin-width));
     margin-right: calc(2 * var(--margin-width));
 
 }
